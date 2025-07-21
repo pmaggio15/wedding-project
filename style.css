@@ -326,6 +326,9 @@ HIGHLIGHTS
     font-size: 32px;
     margin-bottom: 24px;
 }
+.highlight__img:hover {
+    transform: scale(1.03);
+}
 
 .highlight__subtitle {
     font-size: 20px;
@@ -363,8 +366,8 @@ FEATURES
     flex-direction: column;
     align-items: center;
     width: calc(100%/3);
-    gap: 1rem;                 /* space between images */
-    padding: 2rem;
+    gap: 5px;                 /* space between images */
+    padding: 10px;
 }
 
 .venue__img--wrapper {
@@ -375,8 +378,7 @@ FEATURES
     border-radius: 4px;
 }
 .venue__img {
-    width: 200px;
-    height: 150px;
+    object-fit: cover;
 }
 
 .venue:hover .venue__img {
