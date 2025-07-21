@@ -154,21 +154,13 @@ li {
     background-color: #ececec;
     z-index: 1;
 }
-.img__flower {
-  position: absolute;
-  top: 50%;
-  right: 36px;
-  transform: translateY(-125%);
-  width: 100px;   /* adjust size */
-  height: auto;
-  z-index: 0;    /* stays on top */
-}
-.img__flower2 {
+
+ .img__flower2 {
     position: absolute;
     top: 50%;
-    left: 36px;
+    left: 25%;
     transform: translateY(-125%);
-    width: 100px;   /* adjust size */
+    width: auto;   /* adjust size */
     height: auto;
     z-index: 0;    /* stays on top */
 }
@@ -486,6 +478,35 @@ FOOTER
 
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+
+@media (max-width: 1210px) {
+    .img__flower2 {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-125%);
+    width: auto;   /* adjust size */
+    height: auto;
+    z-index: 0;    /* stays on top */
+}
+
+    }
+@media (max-width: 903px) {
+    .img__flower2 {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-125%);
+    width: auto;   /* adjust size */
+    height: auto;
+    z-index: 0;    /* stays on top */
+}
+    }
+    @media (max-width: 679px) {
+    .img__flower2 {
+        display: none;
+}
+    }
 
 @media (max-width: 768px) {
     .header__description {
