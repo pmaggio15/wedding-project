@@ -363,8 +363,8 @@ select {
   margin-top: 32px;
   font-family: tahoma;
   width: 100%;
-  max-width: 124px;
-  transform: translateX(365%);
+  max-width: 200px;
+  transform: translateX(195%);
 }
 
 /* 
@@ -550,8 +550,8 @@ FOOTER
   margin-top: 32px;
   font-family: tahoma;
   width: 100%;
-  max-width: 124px;
-  transform: translateX(245%);
+  max-width: 200px;
+  transform: translateX(125%);
 }
     }
 @media (max-width: 860px) {
@@ -567,7 +567,7 @@ FOOTER
   margin-top: 32px;
   font-family: tahoma;
   width: 100%;
-  max-width: 124px;
+  max-width: 200px;
   transform: translateX(5%);
 }
     }
