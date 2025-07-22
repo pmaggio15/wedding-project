@@ -215,7 +215,6 @@ LANDING
 
 */
 
-
 header {
     height: calc(100vh-80px);
     background-color:#af5f6a;
@@ -376,14 +375,37 @@ FEATURES
     justify-content: center;
     border: 12px solid white;
     border-radius: 4px;
+    position: relative;
 }
 .venue__img {
+    width: 173px;
+    height: 114px;
     object-fit: cover;
 }
-
-.venue:hover .venue__img {
-    transform: scale(1.03);
+.info__overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  font-family: tahoma;
+  color: #4c5b6c;
+  padding: 2px;
+  text-align: center;
+  opacity: 0;                    
+  transition: opacity 0.3s;
 }
+.info__overlay:hover {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  font-family: tahoma;
+  color: #4c5b6c;
+  padding: 2px;
+  text-align: center;
+  opacity: 1;                   
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
 
 .venue__title {
     width: 60%;
