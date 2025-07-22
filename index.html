@@ -18,25 +18,6 @@
                     <li><a href="#" class="nav__link">CONTACTS</a></li>
                     <li><a href="#" class="nav__link">VENUES</a></li>
                 </ul>
-                <button class="btn__menu" onclick="openMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="menu__backdrop">
-                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
-                        <i class="fa-solid fa-xmark"></i>  
-                    </button>
-                    <ul class="menu__links">
-                        <li class="menu__list">
-                            <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
-                        </li>
-                        <li class="menu__list">
-                            <a href="#features" class="menu__link" onclick="closeMenu()">Books</a>
-                        </li>
-                        <li class="menu__list">
-                            <a class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
         <header>
@@ -50,8 +31,14 @@
                     <div class="search__box">
                         <input type="text" placeholder="View Venues Here..." class="search__input">
                         <i class="fa-solid fa-magnifying-glass"></i> 
-                    </div> 
-                 </div>
+                    </div>
+                    <select id="filter" onchange="filterBooks(event)">
+                            <option value="" disabled selected>Sort</option>
+                            <option value="LOW_TO_HIGH">Price, Low to High</option>
+                            <option value="HIGH_TO_LOW">Price, High to Low</option>
+                            <option value="RATING">Rating</option>
+                    </select>
+                </div>
             </div>
         </header>
     </section>
