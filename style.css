@@ -381,7 +381,6 @@ FEATURES
 .venues {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 
 }
 
