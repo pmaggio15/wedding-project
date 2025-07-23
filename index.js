@@ -1,6 +1,3 @@
-// const API_KEY = 'PoXCPocgD-6O175KF_P-TypscWT0oWwIQrDKuGq4KvJO9HcZqDS5szwk-ifIgeIh_imLL34GEE6YmG7yW8mRN_ckFtpDLFdmLcuDnqx55Qoht_tnRYjHDvbXFjl8aHYx';
-// const BASE_URL = 'https://api.yelp.com/v3/businesses/search?term=wedding+venue&location=Bozeman,MT&radius=20000&limit=10';
-
 // const venues = [
 //   "The 1915 Barn",
 //   "Lazy B Barn",
@@ -10,18 +7,50 @@
 //   "The Chateau Event Center",
 // ];
 
-function renderVenues() {
-    console.log ('renderVenues()')
+function renderVenue() {
+const venueWrapper = document.querySelector('.venue');
+
+const venue = getVenue();
+
+const venueHtml = venue.map((venues) => {
+        return `<div class="venue">
+        <figure class="venue__img--wrapper">
+            <img class="venue__img" src="${venues.url}" alt="">
+            <div class="info__overlay">More information</div>
+        </figure>
+        <div class="venue__title">${venues.title}</div>
+        <div class="venue__ratings">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half"></i>
+        </div>
+        <h1 class="reviews">
+            <p class="review__para">
+                “The garden ceremony was straight out of a fairytale book. We were in awe!" — Emily & Jordan
+            </p>
+        </h1>
+    </div>`;
+        })
+        .join("");
+
+console.log(venueHtml);
+
+venueWrapper.innerHTML = venueHtml;
 }
 
-renderVenues();
+setTimeout (() => {
+    renderVenue();
+});
+
 // FAKE DATA //
-function getVenues () {
+function getVenue () {
     return [        
         {
             id: 1,
             title: "The 1915 Barn",
-            url: "./assets/1915 Barn.jpeg",
+            url: "assets/1915 Barn.jpeg",
             rating: 5.0,
             location: {
                 "address1": "4062 Johnson Rd",
@@ -34,7 +63,7 @@ function getVenues () {
         {
             id: 2,
             title: "Lazy B Barn",
-            url: "./assets/The lazy b barn.jpeg",
+            url: "assets/The lazy b barn.jpeg",
             rating: 4.5,
             location: {
                 "address1" : "10401 Gooch Hill Rd",
@@ -48,7 +77,7 @@ function getVenues () {
         {
             id: 3,
             title: "Star M Barn",
-            url: "assets/woodland.jpeg",
+            url: "assets/star M barn.jpeg",
             rating: 5.0,
             location: {
                 "address1": "4186 Stimson Ln",
@@ -74,7 +103,7 @@ function getVenues () {
         {
             id: 5,
             title: "Woodlands At Cottonwood Canyon",
-            url: "./Assets/",
+            url: "assets/woodland.jpeg",
             rating: 4.5,
             location: {
                 "address1" : "141 Old Timber Way",
@@ -87,8 +116,8 @@ function getVenues () {
         {
             id: 6,
             title: "The Chateau Event Center",
-            url: "./assets/",
-            rating: 4.2,
+            url: "assets/The Chateu.jpeg",
+            rating: 4.0,
             location: {
                 "address1": "1568 Cobb Hill Rd",
                 "city": "Bozeman",
