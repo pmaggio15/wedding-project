@@ -363,8 +363,8 @@ select {
   margin-top: 32px;
   font-family: tahoma;
   width: 100%;
-  max-width: 200px;
-  transform: translateX(195%);
+  max-width: 175px;
+  transform: translateX(200%);
 }
 
 /* 
@@ -381,16 +381,17 @@ FEATURES
 .venues {
     display: flex;
     flex-wrap: wrap;
-
+    width: 100%;
 }
 
 .venue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%;
+    width: calc(100%/3);
     gap: 5px;                 /* space between images */
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 .venue__img--wrapper {
