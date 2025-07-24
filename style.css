@@ -364,7 +364,8 @@ select {
   font-family: tahoma;
   width: 100%;
   max-width: 175px;
-  transform: translateX(200%);
+  transform: translateX(80%);
+  
 }
 
 /* 

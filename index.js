@@ -46,6 +46,13 @@ const venueHtml = venue
 venueWrapper.innerHTML = venueHtml;
 }
 
+function searchChange(event) {
+    console.log(event.target.value)
+}
+async function renderVeneue {
+    console.log (await fetch (''))
+}
+
 function ratingsHTML(rating) {
     let ratingHTML = "";
     for (let i = 0; i < Math.floor(rating); ++i) {
