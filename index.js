@@ -6,6 +6,9 @@
 //   "Woodlands At Cottonwood Canyon",
 //   "The Chateau Event Center",
 // ];
+const venueWrapper = document.querySelector('.search__box')
+console.log(venueWrapper)
+
 
 function renderVenue(filter) {
 const venueWrapper = document.querySelector('.venues');
@@ -49,9 +52,12 @@ venueWrapper.innerHTML = venueHtml;
 function searchChange(event) {
     console.log(event.target.value)
 }
-async function renderVeneue {
-    console.log (await fetch (''))
-}
+
+async function renderVenue() {
+    const response = await fetch('https://api.sheetbest.com/sheets/093fe8eb-3234-4e04-b80a-742c8112ec5c')
+    const data = await response.json()
+    const venuesArr = data.search
+}  //START HERE!//
 
 function ratingsHTML(rating) {
     let ratingHTML = "";
