@@ -7,8 +7,6 @@
 //   "The Chateau Event Center",
 // ];
 const venueWrapper = document.querySelector('.search__box')
-console.log(venueWrapper)
-
 
 function renderVenue(filter) {
 const venueWrapper = document.querySelector('.venues');
@@ -50,15 +48,37 @@ venueWrapper.innerHTML = venueHtml;
 }
 
 function searchChange(event) {
-    console.log(event.target.value)
+    renderVenues(event.target.value)
 }
 
-async function renderVenue() {
-    const response = await fetch('https://api.sheetbest.com/sheets/093fe8eb-3234-4e04-b80a-742c8112ec5c')
-    const data = await response.json()
-    const venuesArr = data.search
-}  //START HERE!//
+async function renderVenues(searchTerm) {
+    console.log("This is the search term:", searchTerm)
+    const response = await fetch('https://api.sheetbest.com/sheets/093fe8eb-3234-4e04-b80a-742c8112ec5c');
+    const data = await response.json();
+    const venuesArr = data.Search;
+    console.log(venuesArr);
+    venueWrapper.innerHTML = venuesArr.map((venues) => {
+        return `
+         <div class="venue">
+                    <figure class="venue__img--wrapper">
+                        <img class="venue__img" src="${venues.url}" alt="">
+                        <div class="info__overlay">More information</div>
+                    </figure>
+                    <div class="venue__title">${venues.title}</div>
+                    <div class="venue__ratings">
+                        ${ratingsHTML(venues.rating)}
+                    </div>
+                    <h1 class="reviews">
+                        <p class="review__para">
+                            ${venues.review}
+                        </p>
+                    </h1>
+                </div>
+                `;
+    }).join("")
+}
 
+  
 function ratingsHTML(rating) {
     let ratingHTML = "";
     for (let i = 0; i < Math.floor(rating); ++i) {
@@ -69,7 +89,6 @@ function ratingsHTML(rating) {
     }
     return ratingHTML;
 }
-console.log(ratingsHTML)
 
 function filterVenues (event) {
     renderVenue(event.target.value);
