@@ -150,7 +150,7 @@ li {
     font-size: 16px;
     font-family: Tahoma;
     font-weight: 300;
-    margin-bottom: 32px;
+    margin-bottom: 72px;
     text-align: center;
     color: #af5f6a;
     border: 2px solid #4c5b6c;
@@ -163,8 +163,8 @@ li {
  .img__flower2 {
     position: absolute;
     top: 50%;
-    left: 25%;
-    transform: translateY(-125%);
+    left: 30%;
+    transform: translateY(-185%);
     width: auto;   /* adjust size */
     height: auto;
     z-index: 0;    /* stays on top */
@@ -364,7 +364,7 @@ select {
   font-family: tahoma;
   width: 100%;
   max-width: 175px;
-  transform: translateX(80%);
+  transform: translateX(200%);
   
 }
 

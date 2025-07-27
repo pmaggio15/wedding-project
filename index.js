@@ -52,12 +52,11 @@ function searchChange(event) {
 }
 
 async function renderVenues(searchTerm) {
-    console.log("This is the search term:", searchTerm)
-    const response = await fetch('https://api.sheetbest.com/sheets/093fe8eb-3234-4e04-b80a-742c8112ec5c');
+    const response = await fetch('https://api.sheetbest.com/sheets/093fe8eb-3234-4e04-b80a-742c8112ec5c'); //need to add https: searchable s${searchTerm}
     const data = await response.json();
-    const venuesArr = data.Search;
+    const venuesArr = data;
     console.log(venuesArr);
-    venueWrapper.innerHTML = venuesArr.map((venues) => {
+    venueWrapper.innerHTML = venuesArr.slice(0, 3).map((venues) => {
         return `
          <div class="venue">
                     <figure class="venue__img--wrapper">
@@ -65,9 +64,6 @@ async function renderVenues(searchTerm) {
                         <div class="info__overlay">More information</div>
                     </figure>
                     <div class="venue__title">${venues.title}</div>
-                    <div class="venue__ratings">
-                        ${ratingsHTML(venues.rating)}
-                    </div>
                     <h1 class="reviews">
                         <p class="review__para">
                             ${venues.review}
